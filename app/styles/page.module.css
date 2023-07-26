@@ -1,0 +1,57 @@
+/* hype.4.academy/tools/glassmorphism-generator */
+.glassmorph {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  height: 50vh;
+  left: 50%;
+  min-height: 350px;
+  min-width: 350px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.primaryButton {
+  background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color:#3d94f6;
+	border-radius:25px;
+	border:1px solid #337fed;
+	box-shadow:inset 0px 0px 0px 0px #97c4fe;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+}
+.primaryButton:hover {
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color:#1e62d0;
+}
+.primaryButton:active {
+	position:relative;
+	top:1px;
+}
+
+.footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-family: Consolas, monaco, monospace;
+  font-size: 15px;
+  bottom: 0;
+  color: #fff;
+  z-index: 9999;
+}
