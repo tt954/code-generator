@@ -26,17 +26,31 @@ async function getRandomQuote(apiURL) {
 
   // 3. construct the SVG (add author, etc.)
   // https://symbl.cc | https://fffuel.co/gggrain | https://www.svgviewer.dev
-  const randomGradient = Math.ceil(Math.random() * GRADIENTS.length);
+  const randomGradientIndex = Math.floor(Math.random() * GRADIENTS.length);
   const svgImage = createSvg(
     WIDTH,
     HEIGHT,
     tspans,
     quoteAuthor,
-    randomGradient
+    randomGradientIndex
   );
 
-  // 4. SVG --> image as png (/base64 in lambda)
-  const imagePath = path.join("/tmp", "quote-card.png");
+  // 4. select a random background image
+  const backgroundImages = [
+    "backgrounds/jason-leung.jpg",
+    "backgrounds/magic-pattern.jpg",
+    "backgrounds/pawel-czerwinski.jpg",
+    "backgrounds/rodion-kutsaiev.jpg",
+  ];
+  const randomBackgroundIndex = Math.floor(
+    Math.random() * backgroundImages.length
+  );
+  const selectedBackgroundImage = backgroundImages[randomBackgroundIndex];
 
-  console.log(svgImage);
+  // 5. SVG + selected background image
+  const svgBuffer = Buffer.from(svgImage);
+  const imagePath = path.join("/tmp", "quote-card.png");
+  const image = await sharp(selectedBackgroundImage)
+    .composite([{ input: svgImage, top: 0, left: 0 }])
+    .toFile(imagePath);
 }

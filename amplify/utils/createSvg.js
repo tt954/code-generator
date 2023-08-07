@@ -18,7 +18,7 @@ const createSvg = (
         >
           <stop
             stop-color="${gradients[gradientType][0]}"
-            stop-opacity="1"
+            stop-opacity="0.4"
             offset="-0%"
           ></stop>
           <stop
@@ -37,7 +37,7 @@ const createSvg = (
         >
           <stop stop-color="${
             gradients[gradientType][1]
-          }" stop-opacity="1"></stop>
+          }" stop-opacity="0.4"></stop>
           <stop
             stop-color="rgba(255,255,255,0)"
             stop-opacity="0"
@@ -105,7 +105,7 @@ const createSvg = (
       </defs>
   
       <g>
-        <rect width="100%" height="100%" fill="${
+        <rect width="100%" height="100%" opacity="0.4" fill="${
           gradients[gradientType][2]
         }"></rect>
         <rect width="100%" height="100%" fill="url(#gggrain-gradient3)"></rect>
@@ -115,7 +115,7 @@ const createSvg = (
           height="100%"
           fill="transparent"
           filter="url(#gggrain-filter)"
-          opacity="0.8"
+          opacity="0.5"
           style="mix-blend-mode: soft-light"
         ></rect>
         <text
