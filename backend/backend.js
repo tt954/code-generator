@@ -47,10 +47,12 @@ async function getRandomQuote(apiURL) {
   );
   const selectedBackgroundImage = backgroundImages[randomBackgroundIndex];
 
-  // 5. SVG + selected background image
+  // 5. SVG + selected background image = quote card
   const svgBuffer = Buffer.from(svgImage);
   const imagePath = path.join("/tmp", "quote-card.png");
   const image = await sharp(selectedBackgroundImage)
-    .composite([{ input: svgImage, top: 0, left: 0 }])
+    .composite([{ input: svgBuffer, top: 0, left: 0 }])
     .toFile(imagePath);
+
+  // 6. quote card -> base64 string
 }
